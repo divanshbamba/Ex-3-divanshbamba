@@ -1,0 +1,101 @@
+ import java.util.Scanner;  
+public class  
+SquareRootCalculator {     
+public static void main(String[] 
+args) {  
+Scanner scanner = new 
+Scanner(System.in);  
+try {  
+System.out.print("Enter 
+a number: ");  
+double number = 
+scanner.nextDouble();  
+if (number < 0) {  
+throw new  
+IllegalArgumentException(" 
+Square root of a negative  
+number is not valid.");  
+}  
+double squareRoot = 
+Math.sqrt(number); 
+
+System.out.println("Square  
+root: " + squareRoot);  
+} catch  
+(IllegalArgumentException 
+e) {  
+System.out.println("Error: "  
++ e.getMessage());  
+} catch (Exception e) {  
+System.out.println("Invalid 
+input! Please enter a valid  
+number.");  
+} finally {             
+scanner.close();  
+}  
+}  
+} 
+
+#code 2
+import java.util.Scanner;  
+public class ATM {  
+private static final int  
+CORRECT_PIN = 1234;  //  
+Predefined PIN     private 
+static double balance  
+= 5000.0;       // Initial  
+balance  
+public static void 
+main(String[] args) {  
+Scanner scanner = new 
+Scanner(System.in);  
+try 
+{             
+System.o
+ ut.print("
+ Enter 
+your 
+PIN: ");  
+int enteredPin =  
+scanner.nextInt();  
+if (enteredPin !=  
+CORRECT_PIN) {  
+throw new  
+SecurityException("Invalid  
+PIN! Access denied.");  
+}  
+System.out.print("Enter 
+withdrawal amount: ");  
+double amount =  
+scanner.nextDouble(); 
+if (amount > balance) {                 
+throw new  
+IllegalArgumentException(" 
+Insufficient balance!");  
+}  
+balance -= amount;  
+System.out.println("Wit 
+hdrawal successful! Amount 
+withdrawn: " + amount);  
+} catch (SecurityException  
+e) {  
+System.out.println("Erro 
+r: " + e.getMessage());    
+catch  
+     } 
+(IllegalArgumentException 
+e) {  
+System.out.println("Erro 
+r: " + e.getMessage()); 
+} catch (Exception e) {  
+System.out.println("Inva 
+lid input! Please enter a  
+valid number.");  
+} finally {  
+System.out.println("Re 
+maining balance: " + 
+balance);  
+scanner.close();  
+}  
+}  
+} 
